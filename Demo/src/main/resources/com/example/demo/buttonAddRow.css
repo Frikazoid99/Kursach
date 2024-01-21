@@ -1,0 +1,12 @@
+/* styles.css */
+.button:hover {
+    -fx-background-color: #C9D3CC; /* изменяем цвет фона при наведении курсора */
+     border: 2px solid #2196f3; /* Параметры рамки */
+     border-radius: 0.4em; /* Радиус скругления */
+}
+
+.button:pressed {
+    -fx-background-color: #56E882; /* изменяем цвет фона при нажатии */
+     border: 2px solid #2196f3; /* Параметры рамки */
+     border-radius: 0.4em; /* Радиус скругления */
+}

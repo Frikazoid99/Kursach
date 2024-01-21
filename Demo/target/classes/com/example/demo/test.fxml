@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="887.0" prefWidth="1140.0" style="-fx-background-color: #0091ff;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.HelloController">
+   <children>
+      <AnchorPane fx:id="ConnectHeader" prefHeight="100.0" prefWidth="700.0" style="-fx-background-color: #262626;">
+         <children>
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" layoutY="2.0" prefHeight="96.0" prefWidth="700.0" text="Hotel Manager" textAlignment="CENTER" textFill="#0091ff">
+               <font>
+                  <Font name="Georgia Bold Italic" size="75.0" />
+               </font>
+               <effect>
+                  <DropShadow height="1.0" offsetX="-2.0" offsetY="-2.0" radius="0.0" spread="0.1" width="0.0">
+                     <input>
+                        <DropShadow height="1.0" offsetX="-4.0" radius="0.0" spread="0.1" width="0.0">
+                           <color>
+                              <Color red="0.07894736528396606" green="0.0486111119389534" blue="0.0486111119389534" />
+                           </color>
+                        </DropShadow>
+                     </input>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+         </children>
+      </AnchorPane>
+
+      <AnchorPane fx:id="separate" layoutY="100.0" prefHeight="14.0" prefWidth="700.0" style="-fx-background-color: #ffffff;">
+         <effect>
+            <DropShadow height="25.0" offsetY="5.0" radius="5.75" spread="0.3" width="0.0" />
+         </effect>
+      </AnchorPane>
+
+      <Button fx:id="connect" alignment="CENTER" contentDisplay="TOP" layoutX="268.0" layoutY="271.0" mnemonicParsing="false" onAction="#CreateBase" prefHeight="52.0" prefWidth="165.0" text="Connection" textOverrun="WORD_ELLIPSIS">
+         <font>
+            <Font name="Georgia Italic" size="20.0" />
+         </font>
+      </Button>
+
+      <TextField fx:id="DataBaseName" layoutX="226.0" layoutY="200.0" prefHeight="25.0" prefWidth="250.0" promptText="Database name">
+         <font>
+            <Font name="Georgia Italic" size="14.0" />
+         </font>
+      </TextField>
+
+      <Label fx:id="SecondHeader" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="385.0" layoutY="17.0" prefHeight="60.0" prefWidth="370.0" text="Hotel Manager" textAlignment="CENTER" textFill="#010a11" visible="false">
+         <font>
+            <Font name="Georgia Bold Italic" size="45.0" />
+         </font>
+         <effect>
+            <DropShadow height="1.0" offsetX="-2.0" offsetY="-2.0" radius="0.0" spread="0.1" width="0.0">
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+
+      <ScrollPane fx:id="scrollpane" fitToHeight="true" fitToWidth="true" hbarPolicy="AS_NEEDED" layoutX="45.0" layoutY="81.0" prefHeight="381.0" prefWidth="1050.0" vbarPolicy="AS_NEEDED" visible="false">
+         <content>
+            <GridPane fx:id="root" gridLinesVisible="true" prefWidth="884.0" style="-fx-background-color: #D3C7C4;">
+
+            </GridPane>
+         </content>
+      </ScrollPane>
+
+      <TextField fx:id="IDField" layoutX="220.0" layoutY="477.0" prefHeight="25.0" prefWidth="700.0" promptText="ID" visible="false" />
+      <TextField fx:id="NameHotelField" layoutX="220.0" layoutY="507.0" prefHeight="25.0" prefWidth="700.0" promptText="Название отеля" visible="false" />
+      <TextField fx:id="HotelRoomNumberField" layoutX="220.0" layoutY="537.0" prefHeight="25.0" prefWidth="700.0" promptText="№" visible="false" />
+      <TextField fx:id="LvLHotelRoomField" layoutX="220.0" layoutY="567.0" prefHeight="25.0" prefWidth="700.0" promptText="Категория номера" visible="false" />
+      <TextField fx:id="StatusHotelRoomField" layoutX="220.0" layoutY="597.0" prefHeight="25.0" prefWidth="700.0" promptText="Статус номера" visible="false" />
+      <TextField fx:id="FullNameField" layoutX="220.0" layoutY="627.0" prefHeight="25.0" prefWidth="700.0" promptText="ФИО Клиента" visible="false" />
+      <TextField fx:id="NumberField" layoutX="220.0" layoutY="657.0" prefHeight="25.0" prefWidth="700.0" promptText="Номер телефона Клиента" visible="false" />
+
+      <Button fx:id="addRow" layoutX="520.0" layoutY="697.0" mnemonicParsing="false" onAction="#addRow" prefHeight="30.0" prefWidth="100.0" text="Добавить запись" visible="false">
+         <font>
+            <Font name="Brush Script MT Italic" size="11.0" />
+         </font>
+         <stylesheets>
+            <URL value="@buttonAddRow.css" /> <!-- Подключаем файл со стилями -->
+         </stylesheets>
+      </Button>
+
+      <Button fx:id="update" layoutX="520.0" layoutY="747.0" mnemonicParsing="false" onAction="#Update" prefHeight="30.0" prefWidth="100.0" text="Обновить" visible="false">
+         <font>
+            <Font size="11.0" />
+         </font>
+         <stylesheets>
+            <URL value="@buttonAddRow.css" /> <!-- Подключаем файл со стилями -->
+         </stylesheets>
+
+      </Button>
+      <Button fx:id="baseDelete" layoutX="989.0" layoutY="840.0" mnemonicParsing="false" onAction="#deleteDatabase" prefHeight="30.0" prefWidth="137.0" style="-fx-background-color: #dc3838;" text="Удалить базу данных" visible="false">
+         <effect>
+            <DropShadow height="10.0" radius="4.5" spread="1.0" width="10.0" />
+         </effect>
+      </Button>
+   </children>
+</AnchorPane>
